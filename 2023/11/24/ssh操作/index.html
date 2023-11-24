@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>find命令的用法 | Hexo</title>
+  <title>ssh操作 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="find命令的用法 | Hexo">
+  <meta name="description" content="ssh操作 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="if [ ! -d &quot;&#x2F;myfolder&quot; ]; then mkdir &#x2F;myfolder fi">
 <meta property="og:type" content="article">
@@ -381,9 +381,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-find命令的用法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ssh操作" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">find命令的用法</h1>
+        <h1 class="article-title">ssh操作</h1>
     
     <div class="article-meta">
         
@@ -401,7 +401,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-11-24 22:51:52'>2023-11-24 17:24</time>
+            Created At : <time class="date" title='Updated At: 2023-11-24 21:38:02'>2023-11-24 21:35</time>
         
     </div>
     <div class="article-meta">
@@ -423,7 +423,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%9F%A5%E6%89%BE"><span class="toc-text">根据文件类型查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E6%9D%A5%E6%9F%A5%E6%89%BE"><span class="toc-text">根据文件权限来查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-text">find可执行文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E9%99%A4dir0%E5%8F%8A%E5%AD%90%E7%9B%AE%E5%BD%95%E4%BB%A5%E5%A4%96%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%9F%A5%E6%89%BEtxt%E5%90%8E%E7%BC%80%E6%96%87%E4%BB%B6"><span class="toc-text">在除dir0及子目录以外的目录下查找txt后缀文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE-etc-%E4%B8%8B%E5%90%8D%E7%A7%B0%E4%B8%AD%E5%B8%A6%E6%9C%89passwd%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E6%9F%A5%E6%89%BE%E4%B8%80%E5%B1%82%E3%80%82"><span class="toc-text">查找&#x2F;etc&#x2F;下名称中带有passwd的文件，查找一层。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE-etc-%E4%B8%8B%E5%90%8D%E7%A7%B0%E4%B8%AD%E5%B8%A6%E6%9C%89-conf%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E4%B8%94%E5%8F%AA%E6%9F%A5%E6%89%BE%E7%AC%AC%E4%BA%8C%E5%B1%82"><span class="toc-text">查找&#x2F;etc&#x2F;下名称中带有*.conf的文件，且只查找第二层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE-mnt%E4%B8%AD%E5%8D%81%E5%88%86%E9%92%9F%E5%B7%A6%E5%8F%B3%E4%BF%AE%E6%94%B9%E7%9A%84"><span class="toc-text">查找&#x2F;mnt中十分钟左右修改的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE-mnt%E4%B8%AD%E5%8D%81%E5%88%86%E9%92%9F%E4%BB%A5%E4%B8%8A%E4%BF%AE%E6%94%B9%E7%9A%84"><span class="toc-text">查找&#x2F;mnt中十分钟以上修改的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE-mnt%E4%B8%AD%E5%8D%81%E5%88%86%E9%92%9F%E4%BB%A5%E5%86%85%E4%BF%AE%E6%94%B9%E7%9A%84"><span class="toc-text">查找&#x2F;mnt中十分钟以内修改的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#exec%E5%B0%86%E6%9F%A5%E6%89%BE%E5%88%B0%E5%88%B0%E7%9A%84%E6%96%87%E4%BB%B6%E5%81%9A%E4%BB%A5%E4%B8%8B%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%8A%8A-etc-%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%8D%E7%A7%B0%E4%B8%AD%E5%B8%A6%E6%9C%89-conf%E7%9A%84%E6%96%87%E4%BB%B6%E9%80%92%E5%BD%92%E5%A4%8D%E5%88%B6%E5%88%B0-mnt%E4%B8%8B"><span class="toc-text">-exec将查找到到的文件做以下操作，把&#x2F;etc&#x2F;目录下名称中带有.conf的文件递归复制到&#x2F;mnt下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4find%E5%87%BA%E6%9D%A5%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">删除find出来的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find-%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99"><span class="toc-text">find 使用正则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E7%A9%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E6%88%96%E8%80%85%E7%A9%BA%E6%96%87%E4%BB%B6"><span class="toc-text">查找空文件夹或者空文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%9C%89%E7%9B%B8%E5%90%8C%E5%86%85%E5%AE%B9%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">查找有相同内容的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%BE%E5%88%B0root%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-text">找到root可执行文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BEPE32-%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">查找PE32+类型的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87find%E6%9D%A5%E6%89%B9%E9%87%8F%E6%9B%BF%E6%8D%A2%E6%96%87%E4%BB%B6-PE32-%E6%9B%BF%E6%8D%A2%E6%88%90PE32"><span class="toc-text">通过find来批量替换文件 PE32+替换成PE32</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh%E5%B8%B8%E8%A7%84%E5%91%BD%E4%BB%A4"><span class="toc-text">ssh常规命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh%E5%B8%A6%E7%AB%AF%E5%8F%A3"><span class="toc-text">ssh带端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="toc-text">配置文件路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E4%B8%8Bsshfs%E6%8C%82%E8%BD%BD%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4"><span class="toc-text">linux下sshfs挂载文件命令</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -439,55 +439,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="根据文件类型查找"><a href="#根据文件类型查找" class="headerlink" title="根据文件类型查找"></a>根据文件类型查找</h2><p>只找文件<br>find . -type f<br>只找文件夹<br>find . -type d</p>
-<h2 id="根据文件权限来查找"><a href="#根据文件权限来查找" class="headerlink" title="根据文件权限来查找"></a>根据文件权限来查找</h2><p>find . -perm [文件权限]</p>
-<h2 id="find可执行文件"><a href="#find可执行文件" class="headerlink" title="find可执行文件"></a>find可执行文件</h2><p>find [文件夹] -executable -type f</p>
-<h2 id="在除dir0及子目录以外的目录下查找txt后缀文件"><a href="#在除dir0及子目录以外的目录下查找txt后缀文件" class="headerlink" title="在除dir0及子目录以外的目录下查找txt后缀文件"></a>在除dir0及子目录以外的目录下查找txt后缀文件</h2><p>find .&#x2F; -path ‘.&#x2F;dir0*’ -a -prune -o -name ‘*.txt’ -print</p>
-<h2 id="查找-etc-下名称中带有passwd的文件，查找一层。"><a href="#查找-etc-下名称中带有passwd的文件，查找一层。" class="headerlink" title="查找&#x2F;etc&#x2F;下名称中带有passwd的文件，查找一层。"></a>查找&#x2F;etc&#x2F;下名称中带有passwd的文件，查找一层。</h2><p>find &#x2F;etc -maxdepth 1 -name passwd</p>
-<h2 id="查找-etc-下名称中带有-conf的文件，且只查找第二层"><a href="#查找-etc-下名称中带有-conf的文件，且只查找第二层" class="headerlink" title="查找&#x2F;etc&#x2F;下名称中带有*.conf的文件，且只查找第二层"></a>查找&#x2F;etc&#x2F;下名称中带有*.conf的文件，且只查找第二层</h2><p>find &#x2F;etc -maxdepth 2 -mindepth 2 -name *.conf</p>
-<h2 id="查找-mnt中十分钟左右修改的"><a href="#查找-mnt中十分钟左右修改的" class="headerlink" title="查找&#x2F;mnt中十分钟左右修改的"></a>查找&#x2F;mnt中十分钟左右修改的</h2><p>find &#x2F;mnt -cmin 10</p>
-<h2 id="查找-mnt中十分钟以上修改的"><a href="#查找-mnt中十分钟以上修改的" class="headerlink" title="查找&#x2F;mnt中十分钟以上修改的"></a>查找&#x2F;mnt中十分钟以上修改的</h2><p>find &#x2F;mnt -cmin +10</p>
-<h2 id="查找-mnt中十分钟以内修改的"><a href="#查找-mnt中十分钟以内修改的" class="headerlink" title="查找&#x2F;mnt中十分钟以内修改的"></a>查找&#x2F;mnt中十分钟以内修改的</h2><p>find &#x2F;mnt -cmin -10</p>
-<p><font color="red">-ctime 是以天为单位, -cmin是以分钟为单位</font></p>
-<h2 id="exec将查找到到的文件做以下操作，把-etc-目录下名称中带有-conf的文件递归复制到-mnt下"><a href="#exec将查找到到的文件做以下操作，把-etc-目录下名称中带有-conf的文件递归复制到-mnt下" class="headerlink" title="-exec将查找到到的文件做以下操作，把&#x2F;etc&#x2F;目录下名称中带有.conf的文件递归复制到&#x2F;mnt下"></a>-exec将查找到到的文件做以下操作，把&#x2F;etc&#x2F;目录下名称中带有.conf的文件递归复制到&#x2F;mnt下</h2><p>find &#x2F;etc&#x2F; -name *.conf -exec cp -rf {} &#x2F;mnt ;</p>
-<h2 id="删除find出来的文件"><a href="#删除find出来的文件" class="headerlink" title="删除find出来的文件"></a>删除find出来的文件</h2><p>find . -iname ‘*.tmp’ -delete</p>
-<h2 id="find-使用正则"><a href="#find-使用正则" class="headerlink" title="find 使用正则"></a>find 使用正则</h2><p>find . -regex ‘^&#x2F;home&#x2F;.*.txt$’</p>
-<h2 id="查找空文件夹或者空文件"><a href="#查找空文件夹或者空文件" class="headerlink" title="查找空文件夹或者空文件"></a>查找空文件夹或者空文件</h2><p>find . -empty</p>
-<h2 id="查找有相同内容的文件"><a href="#查找有相同内容的文件" class="headerlink" title="查找有相同内容的文件"></a>查找有相同内容的文件</h2><p>find . -samefile file1</p>
-<h2 id="找到root可执行文件"><a href="#找到root可执行文件" class="headerlink" title="找到root可执行文件"></a>找到root可执行文件</h2><p>find &#x2F; -perm -4000 -type f 2&gt;&#x2F;dev&#x2F;null</p>
-<h2 id="查找PE32-类型的文件"><a href="#查找PE32-类型的文件" class="headerlink" title="查找PE32+类型的文件"></a>查找PE32+类型的文件</h2><pre><code>#/bin/bash
-pe32_plus=&quot;PE32\\+&quot;
-path=./
-for File in \`find $path\`
-do
-    filetype=\`file $File\`
-    echo $filetype|grep -E $pe32_plus&gt;/dev/null 2&gt;&amp;1
-    if [ $? -eq 0 ];then
-        echo $filetype
-fi
-done
-</code></pre>
-<h2 id="通过find来批量替换文件-PE32-替换成PE32"><a href="#通过find来批量替换文件-PE32-替换成PE32" class="headerlink" title="通过find来批量替换文件 PE32+替换成PE32"></a>通过find来批量替换文件 PE32+替换成PE32</h2><pre><code>#/bin/bash
-pe32_plus=&quot;PE32\\+&quot;
-path=./
-r_path=../dotnet-sdk-5.0.210-win-x86/
-for File in \`find $path -name *.dll\`
-do
-    filetype=\`file $File\`
-    echo $filetype|grep -E $pe32_plus&gt;/dev/null 2&gt;&amp;1
-    if [ $? -eq 0 ];then
-                r_file_path=&quot;&quot;
-        for r_File in \`find $r_path -name $&#123;File##*/&#125;\`
-                do
-            r_file_path=$r_File
-            break
-            done
-        \`cp $r_file_path $File\`
-        echo $filetype
-fi
-done
-    
-</code></pre>
+        <h2 id="ssh常规命令"><a href="#ssh常规命令" class="headerlink" title="ssh常规命令"></a>ssh常规命令</h2><p>ssh [账户]@[密码]</p>
+<h2 id="ssh带端口"><a href="#ssh带端口" class="headerlink" title="ssh带端口"></a>ssh带端口</h2><p>ssh [账户]@[密码] -p [端口]</p>
+<h2 id="配置文件路径"><a href="#配置文件路径" class="headerlink" title="配置文件路径"></a>配置文件路径</h2><p>&#x2F;etc&#x2F;ssh&#x2F;sshd_config</p>
+<h2 id="linux下sshfs挂载文件命令"><a href="#linux下sshfs挂载文件命令" class="headerlink" title="linux下sshfs挂载文件命令"></a>linux下sshfs挂载文件命令</h2><p>linux上映射远端机器的硬盘到本地<br>sudo sshfs -o cache&#x3D;yes,allow_other [账号]@[ip]:[远端的文件夹] [本地的文件夹]</p>
+<p>取消挂载<br>sudo fusermount -u [文件夹]</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至wso4133560@gmail.com </span>
