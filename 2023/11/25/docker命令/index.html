@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>docker命令 | Hexo</title>
+  <meta name="keywords" content=" 运维 ">
+  <meta name="description" content="docker命令 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="搜索包含某个关键词的文件名 搜索的文件名中同时包含多个关键词搜索的文件名中同时包含多个关键词，可以在搜索框中顺序敲入那几个关键词，中间用空格分开。 搜索的文件名中包含多个关键词中的一个我想查询的文件名中，包含关键词1，或，包含关键词二，可以在两个关键词中间加竖线（注意竖线前后都有空格），例如coffee | orange 只搜索目录名，不想要文件名在搜索栏下选择文件夹 只搜索某目录下的文件 使用通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="everything的使用">
+<meta property="og:url" content="http://example.com/2023/11/25/everything%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="搜索包含某个关键词的文件名 搜索的文件名中同时包含多个关键词搜索的文件名中同时包含多个关键词，可以在搜索框中顺序敲入那几个关键词，中间用空格分开。 搜索的文件名中包含多个关键词中的一个我想查询的文件名中，包含关键词1，或，包含关键词二，可以在两个关键词中间加竖线（注意竖线前后都有空格），例如coffee | orange 只搜索目录名，不想要文件名在搜索栏下选择文件夹 只搜索某目录下的文件 使用通">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/everything/1.png">
+<meta property="og:image" content="http://example.com/img/everything/2.png">
+<meta property="og:image" content="http://example.com/img/everything/3.png">
+<meta property="og:image" content="http://example.com/img/everything/4.png">
+<meta property="og:image" content="http://example.com/img/everything/5.png">
+<meta property="og:image" content="http://example.com/img/everything/6.png">
+<meta property="og:image" content="http://example.com/img/everything/7.png">
+<meta property="article:published_time" content="2023-11-25T10:05:49.000Z">
+<meta property="article:modified_time" content="2023-11-25T10:45:50.872Z">
+<meta property="article:author" content="Tony Tang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/everything/1.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Tony Tang</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(31)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="linux命令">
+            
+            linux命令
+            <small>(22)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="windows工具">
+            
+            windows工具
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="工具">
+            
+            工具
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="代码模板">
+            
+            代码模板
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="31">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>bash</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C/C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cuda</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编译</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>虚拟机</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>运维</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All windows工具 "
+           href="/2023/11/25/everything%E7%9A%84%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="everything的使用">everything的使用</span>
+            <span class="post-date" title="2023-11-25 18:05:49">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/qemu%E7%9A%84%E5%91%BD%E4%BB%A4/"
+           data-tag="虚拟机"
+           data-author="" >
+            <span class="post-title" title="qemu的命令">qemu的命令</span>
+            <span class="post-date" title="2023-11-25 17:43:08">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2023/11/25/cuda%E5%AE%89%E8%A3%85/"
+           data-tag="cuda"
+           data-author="" >
+            <span class="post-title" title="cuda安装">cuda安装</span>
+            <span class="post-date" title="2023-11-25 17:30:33">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/virsh%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/"
+           data-tag="虚拟机"
+           data-author="" >
+            <span class="post-title" title="virsh虚拟机管理">virsh虚拟机管理</span>
+            <span class="post-date" title="2023-11-25 17:08:22">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/clang%E5%92%8CLLVM%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="clang和LLVM命令使用方法">clang和LLVM命令使用方法</span>
+            <span class="post-date" title="2023-11-25 17:04:56">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/flex%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="flex使用示例">flex使用示例</span>
+            <span class="post-date" title="2023-11-25 17:01:44">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/git%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="git命令使用方法">git命令使用方法</span>
+            <span class="post-date" title="2023-11-25 16:40:05">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="压缩解压缩命令">压缩解压缩命令</span>
+            <span class="post-date" title="2023-11-25 09:59:23">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2023/11/25/%E8%BF%9C%E7%A8%8B%E5%94%A4%E9%86%92ubuntu%E7%B3%BB%E7%BB%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="远程唤醒ubuntu系统">远程唤醒ubuntu系统</span>
+            <span class="post-date" title="2023-11-25 09:55:33">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/llvm%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%90/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="llvm编译参数解析">llvm编译参数解析</span>
+            <span class="post-date" title="2023-11-25 09:46:45">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/%E5%AE%9A%E4%BD%8DC-%E7%AC%A6%E5%8F%B7%E5%90%8D%E7%A7%B0/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="定位C++符号名称">定位C++符号名称</span>
+            <span class="post-date" title="2023-11-25 09:43:54">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/25/bison%E7%94%A8%E6%B3%95/"
+           data-tag="C/C++"
+           data-author="" >
+            <span class="post-title" title="bison用法">bison用法</span>
+            <span class="post-date" title="2023-11-25 09:41:31">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/openwrt%E9%85%8D%E7%BD%AE/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="openwrt配置">openwrt配置</span>
+            <span class="post-date" title="2023-11-25 09:25:32">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/distccd%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%96%E8%AF%91/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="distccd分布式编译">distccd分布式编译</span>
+            <span class="post-date" title="2023-11-25 09:21:12">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/docker%E5%91%BD%E4%BB%A4/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="docker命令">docker命令</span>
+            <span class="post-date" title="2023-11-25 09:15:34">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/24/%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E6%96%87%E4%BB%B6%E5%A4%B9/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="判断是否有文件夹">判断是否有文件夹</span>
+            <span class="post-date" title="2023-11-24 23:10:53">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/24/shell%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="shell命令参数处理">shell命令参数处理</span>
+            <span class="post-date" title="2023-11-24 23:02:32">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/24/expect%E5%91%BD%E4%BB%A4%E4%BA%A4%E4%BA%92%E7%9A%84%E7%94%A8%E6%B3%95/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="expect命令交互的用法">expect命令交互的用法</span>
+            <span class="post-date" title="2023-11-24 22:59:40">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/%E5%A3%B0%E5%8D%A1%E5%88%9D%E5%A7%8B%E5%8C%96%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="声卡初始化命令">声卡初始化命令</span>
+            <span class="post-date" title="2023-11-24 22:53:04">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/%E8%A7%A3%E5%8E%8B-a%E5%8E%8B%E7%BC%A9-o%E5%91%BD%E4%BB%A4/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="解压*a压缩*o命令">解压*a压缩*o命令</span>
+            <span class="post-date" title="2023-11-24 22:38:09">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/cmake%E5%91%BD%E4%BB%A4/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="cmake命令">cmake命令</span>
+            <span class="post-date" title="2023-11-24 22:27:40">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/conda%E5%91%BD%E4%BB%A4/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="conda命令">conda命令</span>
+            <span class="post-date" title="2023-11-24 22:25:59">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/ubuntu%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="ubuntu相关命令">ubuntu相关命令</span>
+            <span class="post-date" title="2023-11-24 22:21:29">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="字符串查找命令">字符串查找命令</span>
+            <span class="post-date" title="2023-11-24 22:15:14">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/apt%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="apt命令">apt命令</span>
+            <span class="post-date" title="2023-11-24 22:11:21">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2023/11/24/markdown%E6%96%87%E6%A1%A3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="markdown文档">markdown文档</span>
+            <span class="post-date" title="2023-11-24 21:55:37">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程下载">多线程下载</span>
+            <span class="post-date" title="2023-11-24 21:48:04">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/make%E6%93%8D%E4%BD%9C/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="make操作">make操作</span>
+            <span class="post-date" title="2023-11-24 21:40:34">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/ssh%E6%93%8D%E4%BD%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ssh操作">ssh操作</span>
+            <span class="post-date" title="2023-11-24 21:35:00">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All windows工具 "
+           href="/2023/11/24/windows%E4%BD%BF%E7%94%A8sshfs%E6%8C%82%E8%BD%BDlinux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="windows使用sshfs挂载linux">windows使用sshfs挂载linux</span>
+            <span class="post-date" title="2023-11-24 21:20:33">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/find%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="find命令的用法">find命令的用法</span>
+            <span class="post-date" title="2023-11-24 17:24:04">2023/11/24</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-docker命令" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">docker命令</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="linux命令">linux命令</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">运维</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2023-11-25 09:17:49'>2023-11-25 09:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="toc-text">查看进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%BF%9B%E7%A8%8B"><span class="toc-text">查看所有进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%BF%9B%E7%A8%8B"><span class="toc-text">删除进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B4%E6%97%B6%E8%BF%9B%E5%85%A5%E5%AE%B9%E5%99%A8"><span class="toc-text">临时进入容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8"><span class="toc-text">启动容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E5%AE%B9%E5%99%A8"><span class="toc-text">进入容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="toc-text">停止容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8"><span class="toc-text">后台启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B4%E6%97%B6%E5%90%AF%E5%8A%A8"><span class="toc-text">临时启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84"><span class="toc-text">后台端口映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8docker-service"><span class="toc-text">启动docker service</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-text">下载镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F"><span class="toc-text">删除镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%95%9C%E5%83%8F"><span class="toc-text">查看镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E5%AE%B9%E5%99%A8"><span class="toc-text">重启容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">打包文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86tar%E5%8C%85%E7%94%9F%E6%88%90%E9%95%9C%E5%83%8F"><span class="toc-text">将tar包生成镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-docker-export-%E5%91%BD%E4%BB%A4%E6%A0%B9%E6%8D%AE%E5%AE%B9%E5%99%A8-ID-%E5%B0%86%E9%95%9C%E5%83%8F%E5%AF%BC%E5%87%BA%E6%88%90%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="toc-text">使用 docker export 命令根据容器 ID 将镜像导出成一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8docker-compose"><span class="toc-text">使用docker-compose</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F"><span class="toc-text">docker 网络模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-%E7%99%BB%E5%BD%95"><span class="toc-text">docker 登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">docker映射文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E4%BB%A5root%E6%9D%83%E9%99%90%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8"><span class="toc-text">docker以root权限运行容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E7%9A%84run%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-text">docker的run命令，官方文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-%E8%BF%9B%E5%85%A5ssh%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">docker 进入ssh的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%89%B9%E6%9D%83%E5%91%BD%E4%BB%A4"><span class="toc-text">添加特权命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%93%E5%9C%A8Docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9C%8B%E5%88%B0-%E2%80%9Cinit-system-PID-1-Can%E2%80%99t-operate%E2%80%9D-%E9%94%99%E8%AF%AF%E6%97%B6%EF%BC%8C%E9%80%9A%E5%B8%B8%E6%98%AF%E5%9B%A0%E4%B8%BA%E5%AE%B9%E5%99%A8%E5%86%85%E9%83%A8%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%9A%84-init-%E8%BF%9B%E7%A8%8B%EF%BC%8C%E8%80%8C-init-%E8%BF%9B%E7%A8%8B%E6%98%AF-Linux-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B%EF%BC%8C%E8%B4%9F%E8%B4%A3%E5%90%AF%E5%8A%A8%E5%92%8C%E7%AE%A1%E7%90%86%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B%E3%80%82"><span class="toc-text">当在Docker容器中看到 “init system (PID 1). Can’t operate” 错误时，通常是因为容器内部没有正在运行的 init 进程，而 init 进程是 Linux 系统中的第一个进程，负责启动和管理其他进程。</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h2><p>docker ps</p>
+<h2 id="查看所有进程"><a href="#查看所有进程" class="headerlink" title="查看所有进程"></a>查看所有进程</h2><p>docker ps -a</p>
+<h2 id="删除进程"><a href="#删除进程" class="headerlink" title="删除进程"></a>删除进程</h2><p>docker rm [进程]</p>
+<h2 id="临时进入容器"><a href="#临时进入容器" class="headerlink" title="临时进入容器"></a>临时进入容器</h2><p>docker attach [容器]</p>
+<h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><p>docker start [进程]</p>
+<h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><p>docker exec -it [容器] &#x2F;bin&#x2F;sh</p>
+<h2 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h2><p>docker stop [容器]</p>
+<h2 id="后台启动"><a href="#后台启动" class="headerlink" title="后台启动"></a>后台启动</h2><p>docker run -d -it [镜像] &#x2F;bin&#x2F;bash</p>
+<h2 id="临时启动"><a href="#临时启动" class="headerlink" title="临时启动"></a>临时启动</h2><p>docker run –rm -it [镜像] bash</p>
+<h2 id="后台端口映射"><a href="#后台端口映射" class="headerlink" title="后台端口映射"></a>后台端口映射</h2><p> docker run -p [宿主机端口]:[端口] -d -it [镜像] &#x2F;bin&#x2F;bash</p>
+<h2 id="启动docker-service"><a href="#启动docker-service" class="headerlink" title="启动docker service"></a>启动docker service</h2><p> systemctl enable docker &amp;&amp; systemctl start docker</p>
+<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><p>docker pull [url]</p>
+<h2 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h2><p>docker rm [镜像]</p>
+<h2 id="查看镜像"><a href="#查看镜像" class="headerlink" title="查看镜像"></a>查看镜像</h2><p>docker image ls</p>
+<h2 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h2><p>docker restart [容器ID]</p>
+<h2 id="打包文件系统"><a href="#打包文件系统" class="headerlink" title="打包文件系统"></a>打包文件系统</h2><p>tar -cvpf &#x2F;tmp&#x2F;system.tar –directory&#x3D;&#x2F; –exclude&#x3D;proc –exclude&#x3D;sys –exclude&#x3D;dev –exclude&#x3D;run –exclude&#x3D;bookmarkearth</p>
+<h2 id="将tar包生成镜像"><a href="#将tar包生成镜像" class="headerlink" title="将tar包生成镜像"></a>将tar包生成镜像</h2><p>docker import [tar包] [镜像名字]</p>
+<h2 id="使用-docker-export-命令根据容器-ID-将镜像导出成一个文件"><a href="#使用-docker-export-命令根据容器-ID-将镜像导出成一个文件" class="headerlink" title="使用 docker export 命令根据容器 ID 将镜像导出成一个文件"></a>使用 docker export 命令根据容器 ID 将镜像导出成一个文件</h2><p>docker export [容器ID] &gt; hangger_server.tar</p>
+<h2 id="使用docker-compose"><a href="#使用docker-compose" class="headerlink" title="使用docker-compose"></a>使用docker-compose</h2><p>docker-compose -f [yaml] up<br>SEND,docker-compose -f [yaml] down</p>
+<h2 id="docker-网络模式"><a href="#docker-网络模式" class="headerlink" title="docker 网络模式"></a>docker 网络模式</h2><p>docker run –net&#x3D;none –rm -it [镜像] bash<br>docker run –net&#x3D;host –rm -it [镜像] bash<br>docker run –net&#x3D;bridge –rm -it [镜像] bash<br>docker run –net&#x3D;container:[进程] –rm -it [镜像] bash</p>
+<h2 id="docker-登录"><a href="#docker-登录" class="headerlink" title="docker 登录"></a>docker 登录</h2><p>docker login –username&#x3D;[账号] [url]</p>
+<h2 id="docker映射文件夹"><a href="#docker映射文件夹" class="headerlink" title="docker映射文件夹"></a>docker映射文件夹</h2><p>docker run -d -it -v [宿主机绝对路径]:[docker内部文件夹例如&#x2F;mnt] [镜像ID] &#x2F;bin&#x2F;bash</p>
+<h2 id="docker以root权限运行容器"><a href="#docker以root权限运行容器" class="headerlink" title="docker以root权限运行容器"></a>docker以root权限运行容器</h2><p>sudo docker exec -ti -u root [容器ID] bash</p>
+<h2 id="docker的run命令，官方文档"><a href="#docker的run命令，官方文档" class="headerlink" title="docker的run命令，官方文档"></a>docker的run命令，官方文档</h2><p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/run/">https://docs.docker.com/engine/reference/run/</a></p>
+<h2 id="docker-进入ssh的方法"><a href="#docker-进入ssh的方法" class="headerlink" title="docker 进入ssh的方法"></a>docker 进入ssh的方法</h2><p>1.启动容器<br>sudo docker run -it –privileged	 –net&#x3D;host –security-opt seccomp&#x3D;unconfined 39f5d02545a9 &#x2F;bin&#x2F;bash<br>2.安装ssh<br>apt update<br>apt install openssh-server openssh-client vim<br>vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config<br>PermitRootLogin yes<br>3.修改root密码<br>passwd<br>4.启动sshd<br>&#x2F;usr&#x2F;sbin&#x2F;sshd -p 50002</p>
+<h2 id="添加特权命令"><a href="#添加特权命令" class="headerlink" title="添加特权命令"></a>添加特权命令</h2><p>–privileged	</p>
+<h2 id="当在Docker容器中看到-“init-system-PID-1-Can’t-operate”-错误时，通常是因为容器内部没有正在运行的-init-进程，而-init-进程是-Linux-系统中的第一个进程，负责启动和管理其他进程。"><a href="#当在Docker容器中看到-“init-system-PID-1-Can’t-operate”-错误时，通常是因为容器内部没有正在运行的-init-进程，而-init-进程是-Linux-系统中的第一个进程，负责启动和管理其他进程。" class="headerlink" title="当在Docker容器中看到 “init system (PID 1). Can’t operate” 错误时，通常是因为容器内部没有正在运行的 init 进程，而 init 进程是 Linux 系统中的第一个进程，负责启动和管理其他进程。"></a>当在Docker容器中看到 “init system (PID 1). Can’t operate” 错误时，通常是因为容器内部没有正在运行的 init 进程，而 init 进程是 Linux 系统中的第一个进程，负责启动和管理其他进程。</h2><p>–init</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至wso4133560@gmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 622px;
+    }
+    .nav.fullscreen {
+        margin-left: -622px;
+    }
+    .nav-left {
+        width: 200px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 592px;
+        }
+        .nav.fullscreen {
+            margin-left: -592px;
+        }
+        .nav-left {
+            width: 200px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 592px;
+            margin-left: -592px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

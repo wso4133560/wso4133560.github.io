@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>git命令使用方法 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="git命令使用方法 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="搜索包含某个关键词的文件名 搜索的文件名中同时包含多个关键词搜索的文件名中同时包含多个关键词，可以在搜索框中顺序敲入那几个关键词，中间用空格分开。 搜索的文件名中包含多个关键词中的一个我想查询的文件名中，包含关键词1，或，包含关键词二，可以在两个关键词中间加竖线（注意竖线前后都有空格），例如coffee | orange 只搜索目录名，不想要文件名在搜索栏下选择文件夹 只搜索某目录下的文件 使用通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="everything的使用">
+<meta property="og:url" content="http://example.com/2023/11/25/everything%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="搜索包含某个关键词的文件名 搜索的文件名中同时包含多个关键词搜索的文件名中同时包含多个关键词，可以在搜索框中顺序敲入那几个关键词，中间用空格分开。 搜索的文件名中包含多个关键词中的一个我想查询的文件名中，包含关键词1，或，包含关键词二，可以在两个关键词中间加竖线（注意竖线前后都有空格），例如coffee | orange 只搜索目录名，不想要文件名在搜索栏下选择文件夹 只搜索某目录下的文件 使用通">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/everything/1.png">
+<meta property="og:image" content="http://example.com/img/everything/2.png">
+<meta property="og:image" content="http://example.com/img/everything/3.png">
+<meta property="og:image" content="http://example.com/img/everything/4.png">
+<meta property="og:image" content="http://example.com/img/everything/5.png">
+<meta property="og:image" content="http://example.com/img/everything/6.png">
+<meta property="og:image" content="http://example.com/img/everything/7.png">
+<meta property="article:published_time" content="2023-11-25T10:05:49.000Z">
+<meta property="article:modified_time" content="2023-11-25T10:45:50.872Z">
+<meta property="article:author" content="Tony Tang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/everything/1.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Tony Tang</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(31)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="linux命令">
+            
+            linux命令
+            <small>(22)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="windows工具">
+            
+            windows工具
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="工具">
+            
+            工具
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="代码模板">
+            
+            代码模板
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="31">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>bash</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C/C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cuda</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编译</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>虚拟机</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>运维</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All windows工具 "
+           href="/2023/11/25/everything%E7%9A%84%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="everything的使用">everything的使用</span>
+            <span class="post-date" title="2023-11-25 18:05:49">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/qemu%E7%9A%84%E5%91%BD%E4%BB%A4/"
+           data-tag="虚拟机"
+           data-author="" >
+            <span class="post-title" title="qemu的命令">qemu的命令</span>
+            <span class="post-date" title="2023-11-25 17:43:08">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2023/11/25/cuda%E5%AE%89%E8%A3%85/"
+           data-tag="cuda"
+           data-author="" >
+            <span class="post-title" title="cuda安装">cuda安装</span>
+            <span class="post-date" title="2023-11-25 17:30:33">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/virsh%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/"
+           data-tag="虚拟机"
+           data-author="" >
+            <span class="post-title" title="virsh虚拟机管理">virsh虚拟机管理</span>
+            <span class="post-date" title="2023-11-25 17:08:22">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/clang%E5%92%8CLLVM%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="clang和LLVM命令使用方法">clang和LLVM命令使用方法</span>
+            <span class="post-date" title="2023-11-25 17:04:56">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/flex%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="flex使用示例">flex使用示例</span>
+            <span class="post-date" title="2023-11-25 17:01:44">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/git%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="git命令使用方法">git命令使用方法</span>
+            <span class="post-date" title="2023-11-25 16:40:05">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="压缩解压缩命令">压缩解压缩命令</span>
+            <span class="post-date" title="2023-11-25 09:59:23">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2023/11/25/%E8%BF%9C%E7%A8%8B%E5%94%A4%E9%86%92ubuntu%E7%B3%BB%E7%BB%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="远程唤醒ubuntu系统">远程唤醒ubuntu系统</span>
+            <span class="post-date" title="2023-11-25 09:55:33">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/llvm%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%90/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="llvm编译参数解析">llvm编译参数解析</span>
+            <span class="post-date" title="2023-11-25 09:46:45">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/%E5%AE%9A%E4%BD%8DC-%E7%AC%A6%E5%8F%B7%E5%90%8D%E7%A7%B0/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="定位C++符号名称">定位C++符号名称</span>
+            <span class="post-date" title="2023-11-25 09:43:54">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/25/bison%E7%94%A8%E6%B3%95/"
+           data-tag="C/C++"
+           data-author="" >
+            <span class="post-title" title="bison用法">bison用法</span>
+            <span class="post-date" title="2023-11-25 09:41:31">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/openwrt%E9%85%8D%E7%BD%AE/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="openwrt配置">openwrt配置</span>
+            <span class="post-date" title="2023-11-25 09:25:32">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/distccd%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%96%E8%AF%91/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="distccd分布式编译">distccd分布式编译</span>
+            <span class="post-date" title="2023-11-25 09:21:12">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/docker%E5%91%BD%E4%BB%A4/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="docker命令">docker命令</span>
+            <span class="post-date" title="2023-11-25 09:15:34">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/24/%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E6%96%87%E4%BB%B6%E5%A4%B9/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="判断是否有文件夹">判断是否有文件夹</span>
+            <span class="post-date" title="2023-11-24 23:10:53">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/24/shell%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="shell命令参数处理">shell命令参数处理</span>
+            <span class="post-date" title="2023-11-24 23:02:32">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/24/expect%E5%91%BD%E4%BB%A4%E4%BA%A4%E4%BA%92%E7%9A%84%E7%94%A8%E6%B3%95/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="expect命令交互的用法">expect命令交互的用法</span>
+            <span class="post-date" title="2023-11-24 22:59:40">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/%E5%A3%B0%E5%8D%A1%E5%88%9D%E5%A7%8B%E5%8C%96%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="声卡初始化命令">声卡初始化命令</span>
+            <span class="post-date" title="2023-11-24 22:53:04">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/%E8%A7%A3%E5%8E%8B-a%E5%8E%8B%E7%BC%A9-o%E5%91%BD%E4%BB%A4/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="解压*a压缩*o命令">解压*a压缩*o命令</span>
+            <span class="post-date" title="2023-11-24 22:38:09">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/cmake%E5%91%BD%E4%BB%A4/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="cmake命令">cmake命令</span>
+            <span class="post-date" title="2023-11-24 22:27:40">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/conda%E5%91%BD%E4%BB%A4/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="conda命令">conda命令</span>
+            <span class="post-date" title="2023-11-24 22:25:59">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/ubuntu%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="ubuntu相关命令">ubuntu相关命令</span>
+            <span class="post-date" title="2023-11-24 22:21:29">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="字符串查找命令">字符串查找命令</span>
+            <span class="post-date" title="2023-11-24 22:15:14">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/apt%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="apt命令">apt命令</span>
+            <span class="post-date" title="2023-11-24 22:11:21">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2023/11/24/markdown%E6%96%87%E6%A1%A3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="markdown文档">markdown文档</span>
+            <span class="post-date" title="2023-11-24 21:55:37">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程下载">多线程下载</span>
+            <span class="post-date" title="2023-11-24 21:48:04">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/make%E6%93%8D%E4%BD%9C/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="make操作">make操作</span>
+            <span class="post-date" title="2023-11-24 21:40:34">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/ssh%E6%93%8D%E4%BD%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ssh操作">ssh操作</span>
+            <span class="post-date" title="2023-11-24 21:35:00">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All windows工具 "
+           href="/2023/11/24/windows%E4%BD%BF%E7%94%A8sshfs%E6%8C%82%E8%BD%BDlinux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="windows使用sshfs挂载linux">windows使用sshfs挂载linux</span>
+            <span class="post-date" title="2023-11-24 21:20:33">2023/11/24</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/24/find%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="find命令的用法">find命令的用法</span>
+            <span class="post-date" title="2023-11-24 17:24:04">2023/11/24</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-git命令使用方法" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">git命令使用方法</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="linux命令">linux命令</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2023-11-25 17:00:13'>2023-11-25 16:40</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%89%80%E6%9C%89%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-text">下载完所有子模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">查看所有分支的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF"><span class="toc-text">删除某个分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-text">切换远程分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E7%89%B9%E5%AE%9A%E5%88%86%E6%94%AF"><span class="toc-text">克隆特定分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%90%8D%E8%AF%8D"><span class="toc-text">修改名词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%A2%AB%E5%88%A0%E9%99%A4%E6%8E%89%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">下载被删除掉的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E7%8E%AFpush"><span class="toc-text">使用令牌环push</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-text">git如何新建分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%9F%A5%E7%9C%8B%E4%BB%A3%E7%90%86"><span class="toc-text">git查看代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">设置代理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%81%A2%E5%A4%8D%E6%88%90%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="toc-text">git恢复成某个版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E5%90%8E%E5%BC%BA%E8%A1%8C%E6%8E%A8%E4%B8%8A%E5%8E%BB%E5%91%BD%E4%BB%A4"><span class="toc-text">版本恢复后强行推上去命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">取消代理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99sh%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90"><span class="toc-text">给sh文件添加可执行权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%9F%A5%E7%9C%8B%E9%93%BE%E6%8E%A5"><span class="toc-text">git查看链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-text">删除子模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BF%A1%E6%81%AF-%E8%BF%BD%E5%8A%A0%E6%8F%90%E4%BA%A4%E5%86%85%E5%AE%B9"><span class="toc-text">修改提交的信息 追加提交内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%BF%A1%E6%81%AF"><span class="toc-text">git环境变量信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80commit"><span class="toc-text">撤销commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%88%B0%E6%9F%90%E4%B8%AA%E6%8F%90%E4%BA%A4"><span class="toc-text">恢复某个文件到某个提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF-1"><span class="toc-text">删除某个分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%86%E8%A1%8C%E7%AC%A6"><span class="toc-text">配置分行符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%97%E5%87%BA%E7%BB%99%E5%AE%9A%E5%AD%98%E5%82%A8%E5%BA%93%E4%B8%AD%E7%9A%84%E5%BD%93%E5%89%8Dgit%E5%BC%95%E7%94%A8"><span class="toc-text">如何列出给定存储库中的当前git引用?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E7%9C%8B%E6%97%A5%E5%BF%97%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">git 看日志的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E6%9F%A5%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-text">git 查查看日志提交记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80add"><span class="toc-text">撤销add</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E7%9A%84%E6%8F%90%E4%BA%A4%E5%B7%AE%E5%BC%82"><span class="toc-text">查看日志的提交差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E5%88%B0%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-text">切换某个文件恢复到某个版本的具体操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E4%B8%8B%E8%BD%BD%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E6%96%87%E4%BB%B6%E5%A4%B9%E9%9C%80%E8%A6%81%E6%8C%89%E7%85%A7%E4%B8%8B%E9%9D%A2%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6"><span class="toc-text">只下载某个文件或者文件夹需要按照下面谷歌插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDhuggingface%E4%B8%8A%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">下载huggingface上的命令</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="下载完所有子模块"><a href="#下载完所有子模块" class="headerlink" title="下载完所有子模块"></a>下载完所有子模块</h2><p>git submodule update –init –recursive</p>
+<h2 id="查看所有分支的命令"><a href="#查看所有分支的命令" class="headerlink" title="查看所有分支的命令"></a>查看所有分支的命令</h2><p>git branch -a</p>
+<h2 id="删除某个分支"><a href="#删除某个分支" class="headerlink" title="删除某个分支"></a>删除某个分支</h2><p>git branch -d [分支名]</p>
+<h2 id="切换远程分支"><a href="#切换远程分支" class="headerlink" title="切换远程分支"></a>切换远程分支</h2><p>git checkout -b 本地分支名 origin&#x2F;远程分支名</p>
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><p>git rm -f [文件名]</p>
+<h2 id="克隆特定分支"><a href="#克隆特定分支" class="headerlink" title="克隆特定分支"></a>克隆特定分支</h2><p>git clone [链接] -b [分支]</p>
+<h2 id="修改名词"><a href="#修改名词" class="headerlink" title="修改名词"></a>修改名词</h2><p>git mv –force AppTest.java apptest.java<br>git add apptest.java<br>git commit –m “rename”<br>git push origin XXX(分支)</p>
+<h2 id="下载被删除掉的文件"><a href="#下载被删除掉的文件" class="headerlink" title="下载被删除掉的文件"></a>下载被删除掉的文件</h2><p>git checkout [文件路径]</p>
+<h2 id="使用令牌环push"><a href="#使用令牌环push" class="headerlink" title="使用令牌环push"></a>使用令牌环push</h2><p>git push https:&#x2F;&#x2F;[Personal Access Token]@github.com&#x2F;[User Name]&#x2F;[Repository Name].git</p>
+<h2 id="git如何新建分支"><a href="#git如何新建分支" class="headerlink" title="git如何新建分支"></a>git如何新建分支</h2><ol>
+<li><p>切换到基础分支，如主干<br>git checkout master</p>
+</li>
+<li><p>创建并切换到新分支<br>git checkout -b panda<br>git branch可以看到已经在panda分支上</p>
+</li>
+<li><p>更新分支代码并提交<br>git add *<br>git commit -m “init panda”<br>git push origin panda</p>
+</li>
+</ol>
+<h2 id="git查看代理"><a href="#git查看代理" class="headerlink" title="git查看代理"></a>git查看代理</h2><p>git config –global –get http.proxy<br>git config –global –get https.proxy</p>
+<h2 id="设置代理："><a href="#设置代理：" class="headerlink" title="设置代理："></a>设置代理：</h2><p>git config –global http.proxy ‘socks5:&#x2F;&#x2F;127.0.0.1:1080’<br>git config –global https.proxy ‘socks5:&#x2F;&#x2F;127.0.0.1:1080’</p>
+<h2 id="git恢复成某个版本"><a href="#git恢复成某个版本" class="headerlink" title="git恢复成某个版本"></a>git恢复成某个版本</h2><p>git reset –hard [hash值]</p>
+<h2 id="版本恢复后强行推上去命令"><a href="#版本恢复后强行推上去命令" class="headerlink" title="版本恢复后强行推上去命令"></a>版本恢复后强行推上去命令</h2><p>git push -f</p>
+<h2 id="取消代理："><a href="#取消代理：" class="headerlink" title="取消代理："></a>取消代理：</h2><p>git config –global –unset http.proxy<br>git config –global –unset https.proxy</p>
+<h2 id="给sh文件添加可执行权限"><a href="#给sh文件添加可执行权限" class="headerlink" title="给sh文件添加可执行权限"></a>给sh文件添加可执行权限</h2><p>find -name “<em>.sh” -exec chmod +x {} ;<br>find -name “</em>.sh” -exec git update-index –chmod&#x3D;+x {} ;</p>
+<h2 id="git查看链接"><a href="#git查看链接" class="headerlink" title="git查看链接"></a>git查看链接</h2><p>git remote -v</p>
+<h2 id="删除子模块"><a href="#删除子模块" class="headerlink" title="删除子模块"></a>删除子模块</h2><p>rm -rf 子模块目录 删除子模块目录及源码<br>vi .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目<br>vi .git&#x2F;config 删除配置项中子模块相关条目<br>rm .git&#x2F;module&#x2F;* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可<br>git rm -cache [模块名字]</p>
+<h2 id="修改提交的信息-追加提交内容"><a href="#修改提交的信息-追加提交内容" class="headerlink" title="修改提交的信息 追加提交内容"></a>修改提交的信息 追加提交内容</h2><p>git commit –amend</p>
+<h2 id="git环境变量信息"><a href="#git环境变量信息" class="headerlink" title="git环境变量信息"></a>git环境变量信息</h2><p>git config –global -l</p>
+<h2 id="撤销commit"><a href="#撤销commit" class="headerlink" title="撤销commit"></a>撤销commit</h2><p>git reset –soft HEAD^</p>
+<h2 id="恢复某个文件到某个提交"><a href="#恢复某个文件到某个提交" class="headerlink" title="恢复某个文件到某个提交"></a>恢复某个文件到某个提交</h2><p>git checkout [分支ID] – ［文件路径］</p>
+<h2 id="删除某个分支-1"><a href="#删除某个分支-1" class="headerlink" title="删除某个分支"></a>删除某个分支</h2><p>git push origin :[branch_name]</p>
+<h2 id="配置分行符"><a href="#配置分行符" class="headerlink" title="配置分行符"></a>配置分行符</h2><p>例如，您可以使用它来控制文件中的结束行。在Windows和基于Unix的系统中，新行有不同的字符(相应的\r\n和\n)。<br>因此，使用gitattributes，我们可以为Windows和Unix使用* text&#x3D;auto在.gitattributes中为任何使用git的人对齐。<br>这样，如果你在Windows中使用Git项目，你会得到\r\n如果你在使用Unix或Linux，你会得到\n。</p>
+<h2 id="如何列出给定存储库中的当前git引用"><a href="#如何列出给定存储库中的当前git引用" class="headerlink" title="如何列出给定存储库中的当前git引用?"></a>如何列出给定存储库中的当前git引用?</h2><p>find .git&#x2F;refs&#x2F;</p>
+<h2 id="git-看日志的方法"><a href="#git-看日志的方法" class="headerlink" title="git 看日志的方法"></a>git 看日志的方法</h2><p>git log –oneline</p>
+<h2 id="git-查查看日志提交记录"><a href="#git-查查看日志提交记录" class="headerlink" title="git 查查看日志提交记录"></a>git 查查看日志提交记录</h2><p>git log -n 3 –patch</p>
+<h2 id="撤销add"><a href="#撤销add" class="headerlink" title="撤销add"></a>撤销add</h2><p>git reset</p>
+<h2 id="查看日志的提交差异"><a href="#查看日志的提交差异" class="headerlink" title="查看日志的提交差异"></a>查看日志的提交差异</h2><p>git show [hash_id]</p>
+<h2 id="切换某个文件恢复到某个版本的具体操作"><a href="#切换某个文件恢复到某个版本的具体操作" class="headerlink" title="切换某个文件恢复到某个版本的具体操作"></a>切换某个文件恢复到某个版本的具体操作</h2><p>git checkout <code>&lt;commit-hash&gt; -- &lt;file-path&gt;</code></p>
+<h2 id="只下载某个文件或者文件夹需要按照下面谷歌插件"><a href="#只下载某个文件或者文件夹需要按照下面谷歌插件" class="headerlink" title="只下载某个文件或者文件夹需要按照下面谷歌插件"></a>只下载某个文件或者文件夹需要按照下面谷歌插件</h2><p>gitzip for github</p>
+<h2 id="下载huggingface上的命令"><a href="#下载huggingface上的命令" class="headerlink" title="下载huggingface上的命令"></a>下载huggingface上的命令</h2><p>sudo apt install git-lfs<br>git lfs install<br>git clone <a target="_blank" rel="noopener" href="https://huggingface.co/[%E9%A1%B9%E7%9B%AE%E5%90%8D]">https://huggingface.co/[项目名]</a></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至wso4133560@gmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 622px;
+    }
+    .nav.fullscreen {
+        margin-left: -622px;
+    }
+    .nav-left {
+        width: 200px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 592px;
+        }
+        .nav.fullscreen {
+            margin-left: -592px;
+        }
+        .nav-left {
+            width: 200px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 592px;
+            margin-left: -592px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
