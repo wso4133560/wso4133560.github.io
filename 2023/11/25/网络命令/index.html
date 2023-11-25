@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>distccd分布式编译 | Hexo</title>
-  <meta name="keywords" content=" 编译 ">
-  <meta name="description" content="distccd分布式编译 | Hexo">
+  <title>网络命令 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="网络命令 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
 <meta property="og:type" content="article">
@@ -602,9 +602,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-distccd分布式编译" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-网络命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">distccd分布式编译</h1>
+        <h1 class="article-title">网络命令</h1>
     
     <div class="article-meta">
         
@@ -619,17 +619,10 @@
         </span>
         
         
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color3">编译</a>
-            
-        </span>
-        
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-11-25 09:22:12'>2023-11-25 09:21</time>
+            Created At : <time class="date" title='Updated At: 2023-11-25 19:43:44'>2023-11-25 19:36</time>
         
     </div>
     <div class="article-meta">
@@ -651,7 +644,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-text">安装软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E9%85%8D%E7%BD%AE%EF%BC%8C%E4%BF%AE%E6%94%B9%E7%9B%91%E5%90%AC%E5%8F%82%E6%95%B0"><span class="toc-text">服务器端配置，修改监听参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">运行命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">客户端配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cmake%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B"><span class="toc-text">cmake命令示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%88%86%E5%8F%91%E6%95%B0%E9%87%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">监视分发数量的命令</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-text">安装命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E7%9A%84ip-mac%E6%98%A0%E5%B0%84%E4%BF%A1%E6%81%AF"><span class="toc-text">查看所有的ip mac映射信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81"><span class="toc-text">查看网络连接状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="toc-text">查看网卡驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E9%98%9F%E5%88%97"><span class="toc-text">查看网卡队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1%E7%9B%91%E5%90%AC%E7%8A%B6%E6%80%81"><span class="toc-text">启动网卡监听状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1%E4%BF%A1%E6%81%AF"><span class="toc-text">配置网卡信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1%E4%BF%A1%E6%81%AF"><span class="toc-text">查看网卡信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%B7%AF%E7%94%B1"><span class="toc-text">查看路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8BIP"><span class="toc-text">查看IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1"><span class="toc-text">配置默认路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%89%80%E6%9C%89%E8%A7%84%E5%88%99"><span class="toc-text">清除所有规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%A7%84%E5%88%99"><span class="toc-text">查看所有规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BD%AC%E5%8F%91%E8%A7%84%E5%88%99"><span class="toc-text">查看转发规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E7%9A%84%E6%B5%81%E9%87%8F"><span class="toc-text">查看网络设备的流量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8BTCP%E6%8C%87%E6%A0%87%E5%92%8CTCP%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF"><span class="toc-text">查看TCP指标和TCP错误信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89socket"><span class="toc-text">列出所有socket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%89%93%E5%BC%80%E6%89%80%E6%9C%89%E7%AB%AF%E5%8F%A3"><span class="toc-text">显示打开所有端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89TCPsocket"><span class="toc-text">显示所有TCPsocket</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89udp-socket"><span class="toc-text">显示所有udp socket</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -667,12 +660,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>sudo apt install distccd</p>
-<h2 id="服务器端配置，修改监听参数"><a href="#服务器端配置，修改监听参数" class="headerlink" title="服务器端配置，修改监听参数"></a>服务器端配置，修改监听参数</h2><p>sudo vim &#x2F;etc&#x2F;default&#x2F;distccd<br>将ALLOWEDNETS和LISTENER修改成需要的网段</p>
-<h2 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h2><p>&#x2F;usr&#x2F;bin&#x2F;distccd –daemon –user nobody –allow 10.0.10.1&#x2F;24 –jobs&#x3D;32</p>
-<h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><p>vim &#x2F;etc&#x2F;distcc&#x2F;hosts<br>添加服务器的IP地址<br>[ip地址]&#x2F;[分发线程数量]</p>
-<h2 id="cmake命令示例"><a href="#cmake命令示例" class="headerlink" title="cmake命令示例"></a>cmake命令示例</h2><p>cmake -G “Unix Makefiles” -DCMAKE_C_COMPILER_LAUNCHER&#x3D;distcc -DCMAKE_CXX_COMPILER_LAUNCHER&#x3D;distcc [文件夹]<br>make -j32</p>
-<h2 id="监视分发数量的命令"><a href="#监视分发数量的命令" class="headerlink" title="监视分发数量的命令"></a>监视分发数量的命令</h2><p>distccmon-text [打印间隔时间单位秒]</p>
+        <h2 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h2><p>apt install net-tools nload</p>
+<h2 id="查看所有的ip-mac映射信息"><a href="#查看所有的ip-mac映射信息" class="headerlink" title="查看所有的ip mac映射信息"></a>查看所有的ip mac映射信息</h2><p>arp -a</p>
+<h2 id="查看网络连接状态"><a href="#查看网络连接状态" class="headerlink" title="查看网络连接状态"></a>查看网络连接状态</h2><p>ethtool [网卡]</p>
+<h2 id="查看网卡驱动"><a href="#查看网卡驱动" class="headerlink" title="查看网卡驱动"></a>查看网卡驱动</h2><p>ethtool -i [网卡]</p>
+<h2 id="查看网卡队列"><a href="#查看网卡队列" class="headerlink" title="查看网卡队列"></a>查看网卡队列</h2><p>ethtool -S [网卡]</p>
+<h2 id="启动网卡监听状态"><a href="#启动网卡监听状态" class="headerlink" title="启动网卡监听状态"></a>启动网卡监听状态</h2><p>ethtool -s [网卡] wol g</p>
+<h2 id="配置网卡信息"><a href="#配置网卡信息" class="headerlink" title="配置网卡信息"></a>配置网卡信息</h2><p>ifconfig [网卡] [ip] netmask [掩码]</p>
+<h2 id="查看网卡信息"><a href="#查看网卡信息" class="headerlink" title="查看网卡信息"></a>查看网卡信息</h2><p>ifconfig [网卡]</p>
+<h2 id="查看路由"><a href="#查看路由" class="headerlink" title="查看路由"></a>查看路由</h2><p>ip route show</p>
+<h2 id="查看IP"><a href="#查看IP" class="headerlink" title="查看IP"></a>查看IP</h2><p>ip addr show</p>
+<h2 id="配置默认路由"><a href="#配置默认路由" class="headerlink" title="配置默认路由"></a>配置默认路由</h2><p>route add default gw [ip]</p>
+<h2 id="清除所有规则"><a href="#清除所有规则" class="headerlink" title="清除所有规则"></a>清除所有规则</h2><p>iptables -f</p>
+<h2 id="查看所有规则"><a href="#查看所有规则" class="headerlink" title="查看所有规则"></a>查看所有规则</h2><p>iptables -L -n</p>
+<h2 id="查看转发规则"><a href="#查看转发规则" class="headerlink" title="查看转发规则"></a>查看转发规则</h2><p>iptables -t nat -nL</p>
+<h2 id="查看网络设备的流量"><a href="#查看网络设备的流量" class="headerlink" title="查看网络设备的流量"></a>查看网络设备的流量</h2><p>sar -n DEV 1<br>nload [网卡]</p>
+<h2 id="查看TCP指标和TCP错误信息"><a href="#查看TCP指标和TCP错误信息" class="headerlink" title="查看TCP指标和TCP错误信息"></a>查看TCP指标和TCP错误信息</h2><p>sar -n TCP,ETCP 1</p>
+<h2 id="列出所有socket"><a href="#列出所有socket" class="headerlink" title="列出所有socket"></a>列出所有socket</h2><p>ss -s</p>
+<h2 id="显示打开所有端口"><a href="#显示打开所有端口" class="headerlink" title="显示打开所有端口"></a>显示打开所有端口</h2><p>ss -l</p>
+<h2 id="显示所有TCPsocket"><a href="#显示所有TCPsocket" class="headerlink" title="显示所有TCPsocket"></a>显示所有TCPsocket</h2><p>ss -ant</p>
+<h2 id="显示所有udp-socket"><a href="#显示所有udp-socket" class="headerlink" title="显示所有udp socket"></a>显示所有udp socket</h2><p>ss -u -a</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至wso4133560@gmail.com </span>

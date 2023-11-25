@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>distccd分布式编译 | Hexo</title>
-  <meta name="keywords" content=" 编译 ">
-  <meta name="description" content="distccd分布式编译 | Hexo">
+  <title>asm的代码模板 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="asm的代码模板 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
 <meta property="og:type" content="article">
@@ -602,9 +602,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-distccd分布式编译" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-asm的代码模板" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">distccd分布式编译</h1>
+        <h1 class="article-title">asm的代码模板</h1>
     
     <div class="article-meta">
         
@@ -614,22 +614,15 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="linux命令">linux命令</a>
+            <a  data-rel="代码模板">代码模板</a>
             
         </span>
         
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color3">编译</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-11-25 09:22:12'>2023-11-25 09:21</time>
+            Created At : <time class="date" title='Updated At: 2023-11-25 20:00:57'>2023-11-25 19:59</time>
         
     </div>
     <div class="article-meta">
@@ -651,7 +644,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-text">安装软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E9%85%8D%E7%BD%AE%EF%BC%8C%E4%BF%AE%E6%94%B9%E7%9B%91%E5%90%AC%E5%8F%82%E6%95%B0"><span class="toc-text">服务器端配置，修改监听参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">运行命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">客户端配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cmake%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B"><span class="toc-text">cmake命令示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%88%86%E5%8F%91%E6%95%B0%E9%87%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">监视分发数量的命令</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Casm%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-text">直接运行asm的二进制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mips64%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%86%99%E6%B3%95"><span class="toc-text">mips64用寄存器的写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gcc%E5%AE%98%E6%96%B9%E7%94%A8%E6%B3%95"><span class="toc-text">gcc官方用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F%E6%8C%87%E5%AE%9A%E5%88%B0%E5%AF%84%E5%AD%98%E5%99%A8%E9%87%8C%E9%9D%A2"><span class="toc-text">将一个变量指定到寄存器里面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x64%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">x64代码示例</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -667,12 +660,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>sudo apt install distccd</p>
-<h2 id="服务器端配置，修改监听参数"><a href="#服务器端配置，修改监听参数" class="headerlink" title="服务器端配置，修改监听参数"></a>服务器端配置，修改监听参数</h2><p>sudo vim &#x2F;etc&#x2F;default&#x2F;distccd<br>将ALLOWEDNETS和LISTENER修改成需要的网段</p>
-<h2 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h2><p>&#x2F;usr&#x2F;bin&#x2F;distccd –daemon –user nobody –allow 10.0.10.1&#x2F;24 –jobs&#x3D;32</p>
-<h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><p>vim &#x2F;etc&#x2F;distcc&#x2F;hosts<br>添加服务器的IP地址<br>[ip地址]&#x2F;[分发线程数量]</p>
-<h2 id="cmake命令示例"><a href="#cmake命令示例" class="headerlink" title="cmake命令示例"></a>cmake命令示例</h2><p>cmake -G “Unix Makefiles” -DCMAKE_C_COMPILER_LAUNCHER&#x3D;distcc -DCMAKE_CXX_COMPILER_LAUNCHER&#x3D;distcc [文件夹]<br>make -j32</p>
-<h2 id="监视分发数量的命令"><a href="#监视分发数量的命令" class="headerlink" title="监视分发数量的命令"></a>监视分发数量的命令</h2><p>distccmon-text [打印间隔时间单位秒]</p>
+        <h2 id="直接运行asm的二进制"><a href="#直接运行asm的二进制" class="headerlink" title="直接运行asm的二进制"></a>直接运行asm的二进制</h2><pre><code>asm(&quot;.insn \n\t&quot;
+&quot;.word(0xEF380000) \n\t&quot;);
+</code></pre>
+<h2 id="mips64用寄存器的写法"><a href="#mips64用寄存器的写法" class="headerlink" title="mips64用寄存器的写法"></a>mips64用寄存器的写法</h2><pre><code>asm(&quot;ori $t9, $sp, 0\n\t&quot;);
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://akaedu.github.io/book/ch19s05.html">https://akaedu.github.io/book/ch19s05.html</a></p>
+<h2 id="gcc官方用法"><a href="#gcc官方用法" class="headerlink" title="gcc官方用法"></a>gcc官方用法</h2><p><a target="_blank" rel="noopener" href="https://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html">https://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html</a></p>
+<h2 id="将一个变量指定到寄存器里面"><a href="#将一个变量指定到寄存器里面" class="headerlink" title="将一个变量指定到寄存器里面"></a>将一个变量指定到寄存器里面</h2><pre><code>register uint64_t p0 asm(&quot;x0&quot;) = a;
+</code></pre>
+<h2 id="x64代码示例"><a href="#x64代码示例" class="headerlink" title="x64代码示例"></a>x64代码示例</h2><pre><code>#include &lt;stdio.h&gt;
+
+int main() 
+&#123;
+        int a = 10, b;
+
+    __asm__(&quot;movl %1, %%eax\n\t&quot;
+        &quot;movl %%eax, %0\n\t&quot;
+        :&quot;=r&quot;(b)        /* output */
+        :&quot;r&quot;(a)         /* input */
+        :&quot;%eax&quot;         /* clobbered register */
+        );
+    printf(&quot;Result: %d, %d\n&quot;, a, b);
+    return 0;
+&#125;
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至wso4133560@gmail.com </span>

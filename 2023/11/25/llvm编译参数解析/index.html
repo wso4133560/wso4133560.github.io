@@ -6,25 +6,17 @@
   <meta name="keywords" content=" 编译 ">
   <meta name="description" content="llvm编译参数解析 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="搜索包含某个关键词的文件名 搜索的文件名中同时包含多个关键词搜索的文件名中同时包含多个关键词，可以在搜索框中顺序敲入那几个关键词，中间用空格分开。 搜索的文件名中包含多个关键词中的一个我想查询的文件名中，包含关键词1，或，包含关键词二，可以在两个关键词中间加竖线（注意竖线前后都有空格），例如coffee | orange 只搜索目录名，不想要文件名在搜索栏下选择文件夹 只搜索某目录下的文件 使用通">
+<meta name="description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="everything的使用">
-<meta property="og:url" content="http://example.com/2023/11/25/everything%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="跑异构的rootfs">
+<meta property="og:url" content="http://example.com/2023/11/25/%E8%B7%91%E5%BC%82%E6%9E%84%E7%9A%84rootfs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="搜索包含某个关键词的文件名 搜索的文件名中同时包含多个关键词搜索的文件名中同时包含多个关键词，可以在搜索框中顺序敲入那几个关键词，中间用空格分开。 搜索的文件名中包含多个关键词中的一个我想查询的文件名中，包含关键词1，或，包含关键词二，可以在两个关键词中间加竖线（注意竖线前后都有空格），例如coffee | orange 只搜索目录名，不想要文件名在搜索栏下选择文件夹 只搜索某目录下的文件 使用通">
+<meta property="og:description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/everything/1.png">
-<meta property="og:image" content="http://example.com/img/everything/2.png">
-<meta property="og:image" content="http://example.com/img/everything/3.png">
-<meta property="og:image" content="http://example.com/img/everything/4.png">
-<meta property="og:image" content="http://example.com/img/everything/5.png">
-<meta property="og:image" content="http://example.com/img/everything/6.png">
-<meta property="og:image" content="http://example.com/img/everything/7.png">
-<meta property="article:published_time" content="2023-11-25T10:05:49.000Z">
-<meta property="article:modified_time" content="2023-11-25T10:45:50.872Z">
+<meta property="article:published_time" content="2023-11-25T12:05:25.000Z">
+<meta property="article:modified_time" content="2023-11-25T12:08:18.510Z">
 <meta property="article:author" content="Tony Tang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/everything/1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -91,7 +83,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(31)</small>
+                <small>(38)</small>
             
         </div>
     </li>
@@ -103,7 +95,7 @@
         <div data-rel="linux命令">
             
             linux命令
-            <small>(22)</small>
+            <small>(28)</small>
         </div>
         
     </li>
@@ -148,7 +140,7 @@
         <div data-rel="代码模板">
             
             代码模板
-            <small>(4)</small>
+            <small>(5)</small>
         </div>
         
     </li>
@@ -169,7 +161,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="31">
+<input type="hidden" id="yelog_site_posts_number" value="38">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -249,6 +241,69 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/%E8%B7%91%E5%BC%82%E6%9E%84%E7%9A%84rootfs/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="跑异构的rootfs">跑异构的rootfs</span>
+            <span class="post-date" title="2023-11-25 20:05:25">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/bazel%E5%91%BD%E4%BB%A4/"
+           data-tag="编译"
+           data-author="" >
+            <span class="post-title" title="bazel命令">bazel命令</span>
+            <span class="post-date" title="2023-11-25 20:02:09">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All 代码模板 "
+           href="/2023/11/25/asm%E7%9A%84%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="asm的代码模板">asm的代码模板</span>
+            <span class="post-date" title="2023-11-25 19:59:21">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/pip%E5%91%BD%E4%BB%A4/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="pip命令">pip命令</span>
+            <span class="post-date" title="2023-11-25 19:49:16">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/tmux%E7%9A%84%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tmux的命令">tmux的命令</span>
+            <span class="post-date" title="2023-11-25 19:44:53">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络命令">网络命令</span>
+            <span class="post-date" title="2023-11-25 19:36:19">2023/11/25</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/25/%E6%89%93%E5%8D%B0%E8%BF%9B%E7%A8%8B%E4%BD%BF%E7%94%A8%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="打印进程使用的二进制">打印进程使用的二进制</span>
+            <span class="post-date" title="2023-11-25 19:29:02">2023/11/25</span>
+        </a>
         
         
         <a  class="All windows工具 "

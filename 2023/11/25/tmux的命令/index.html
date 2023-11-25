@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>distccd分布式编译 | Hexo</title>
-  <meta name="keywords" content=" 编译 ">
-  <meta name="description" content="distccd分布式编译 | Hexo">
+  <title>tmux的命令 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="tmux的命令 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
 <meta property="og:type" content="article">
@@ -602,9 +602,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-distccd分布式编译" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-tmux的命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">distccd分布式编译</h1>
+        <h1 class="article-title">tmux的命令</h1>
     
     <div class="article-meta">
         
@@ -619,17 +619,10 @@
         </span>
         
         
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color3">编译</a>
-            
-        </span>
-        
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-11-25 09:22:12'>2023-11-25 09:21</time>
+            Created At : <time class="date" title='Updated At: 2023-11-25 19:47:01'>2023-11-25 19:44</time>
         
     </div>
     <div class="article-meta">
@@ -651,7 +644,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-text">安装软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E9%85%8D%E7%BD%AE%EF%BC%8C%E4%BF%AE%E6%94%B9%E7%9B%91%E5%90%AC%E5%8F%82%E6%95%B0"><span class="toc-text">服务器端配置，修改监听参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">运行命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">客户端配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cmake%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B"><span class="toc-text">cmake命令示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%88%86%E5%8F%91%E6%95%B0%E9%87%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">监视分发数量的命令</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E4%BC%9A%E8%AF%9D"><span class="toc-text">新建会话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%A6%BB%E4%BC%9A%E8%AF%9D"><span class="toc-text">分离会话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E4%BC%9A%E8%AF%9D"><span class="toc-text">查看所有会话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BC%9A%E8%AF%9D%E7%BC%96%E5%8F%B7"><span class="toc-text">使用会话编号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BC%9A%E8%AF%9D%E5%90%8D%E7%A7%B0"><span class="toc-text">使用会话名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%BC%9A%E8%AF%9D-%E4%BD%BF%E7%94%A8%E4%BC%9A%E8%AF%9D%E7%BC%96%E5%8F%B7"><span class="toc-text">切换会话, 使用会话编号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BC%9A%E8%AF%9D%E5%90%8D%E7%A7%B0-1"><span class="toc-text">使用会话名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E4%BC%9A%E8%AF%9D"><span class="toc-text">重命名会话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tmux-split-window%E5%91%BD%E4%BB%A4%E7%94%A8%E6%9D%A5%E5%88%92%E5%88%86%E7%AA%97%E6%A0%BC%E3%80%82"><span class="toc-text">tmux split-window命令用来划分窗格。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%92%E5%88%86%E4%B8%8A%E4%B8%8B%E4%B8%A4%E4%B8%AA%E7%AA%97%E6%A0%BC"><span class="toc-text">划分上下两个窗格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%92%E5%88%86%E5%B7%A6%E5%8F%B3%E4%B8%A4%E4%B8%AA%E7%AA%97%E6%A0%BC"><span class="toc-text">划分左右两个窗格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tmux%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%E9%93%BE%E6%8E%A5"><span class="toc-text">tmux详细教程链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E4%B8%8A%E7%BF%BB%E6%BB%9A%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-text">向上翻滚操作步骤</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -667,12 +660,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>sudo apt install distccd</p>
-<h2 id="服务器端配置，修改监听参数"><a href="#服务器端配置，修改监听参数" class="headerlink" title="服务器端配置，修改监听参数"></a>服务器端配置，修改监听参数</h2><p>sudo vim &#x2F;etc&#x2F;default&#x2F;distccd<br>将ALLOWEDNETS和LISTENER修改成需要的网段</p>
-<h2 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h2><p>&#x2F;usr&#x2F;bin&#x2F;distccd –daemon –user nobody –allow 10.0.10.1&#x2F;24 –jobs&#x3D;32</p>
-<h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><p>vim &#x2F;etc&#x2F;distcc&#x2F;hosts<br>添加服务器的IP地址<br>[ip地址]&#x2F;[分发线程数量]</p>
-<h2 id="cmake命令示例"><a href="#cmake命令示例" class="headerlink" title="cmake命令示例"></a>cmake命令示例</h2><p>cmake -G “Unix Makefiles” -DCMAKE_C_COMPILER_LAUNCHER&#x3D;distcc -DCMAKE_CXX_COMPILER_LAUNCHER&#x3D;distcc [文件夹]<br>make -j32</p>
-<h2 id="监视分发数量的命令"><a href="#监视分发数量的命令" class="headerlink" title="监视分发数量的命令"></a>监视分发数量的命令</h2><p>distccmon-text [打印间隔时间单位秒]</p>
+        <h2 id="新建会话"><a href="#新建会话" class="headerlink" title="新建会话"></a>新建会话</h2><p>tmux new -s <session-name></p>
+<h2 id="分离会话"><a href="#分离会话" class="headerlink" title="分离会话"></a>分离会话</h2><p>tmux detach</p>
+<h2 id="查看所有会话"><a href="#查看所有会话" class="headerlink" title="查看所有会话"></a>查看所有会话</h2><p>tmux ls</p>
+<h2 id="使用会话编号"><a href="#使用会话编号" class="headerlink" title="使用会话编号"></a>使用会话编号</h2><p>tmux attach -t 0</p>
+<h2 id="使用会话名称"><a href="#使用会话名称" class="headerlink" title="使用会话名称"></a>使用会话名称</h2><p>tmux attach -t <session-name></p>
+<h2 id="切换会话-使用会话编号"><a href="#切换会话-使用会话编号" class="headerlink" title="切换会话, 使用会话编号"></a>切换会话, 使用会话编号</h2><p>tmux switch -t 0</p>
+<h2 id="使用会话名称-1"><a href="#使用会话名称-1" class="headerlink" title="使用会话名称"></a>使用会话名称</h2><p>tmux switch -t <session-name></p>
+<h2 id="重命名会话"><a href="#重命名会话" class="headerlink" title="重命名会话"></a>重命名会话</h2><p>tmux rename-session -t 0 <new-name></p>
+<h2 id="tmux-split-window命令用来划分窗格。"><a href="#tmux-split-window命令用来划分窗格。" class="headerlink" title="tmux split-window命令用来划分窗格。"></a>tmux split-window命令用来划分窗格。</h2><h2 id="划分上下两个窗格"><a href="#划分上下两个窗格" class="headerlink" title="划分上下两个窗格"></a>划分上下两个窗格</h2><p>tmux split-window</p>
+<h2 id="划分左右两个窗格"><a href="#划分左右两个窗格" class="headerlink" title="划分左右两个窗格"></a>划分左右两个窗格</h2><p>tmux split-window -h</p>
+<h2 id="tmux详细教程链接"><a href="#tmux详细教程链接" class="headerlink" title="tmux详细教程链接"></a>tmux详细教程链接</h2><p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/10/tmux.html">https://www.ruanyifeng.com/blog/2019/10/tmux.html</a></p>
+<h2 id="向上翻滚操作步骤"><a href="#向上翻滚操作步骤" class="headerlink" title="向上翻滚操作步骤"></a>向上翻滚操作步骤</h2><p>ctrl + b;<br>[</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至wso4133560@gmail.com </span>
