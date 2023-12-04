@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="git命令使用方法 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
+<meta name="description" content="VIPT（Virtual Index, Physical Tag）和VIVT（Virtual Index, Virtual Tag）是与缓存相关的两种不同的缓存组织方式，主要涉及缓存中的索引和标记的处理方式。这两者的区别在于虚拟地址空间和物理地址空间在缓存中是如何映射的。 VIPT（Virtual Index, Physical Tag）: 在VIPT缓存中，虚拟地址的高位用于索引缓存，而低位用于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跑异构的rootfs">
-<meta property="og:url" content="http://example.com/2023/11/25/%E8%B7%91%E5%BC%82%E6%9E%84%E7%9A%84rootfs/index.html">
+<meta property="og:title" content="vipt-cache和vivt-cache的区别">
+<meta property="og:url" content="http://example.com/2023/11/29/vipt-cache%E5%92%8Cvivt-cache%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
+<meta property="og:description" content="VIPT（Virtual Index, Physical Tag）和VIVT（Virtual Index, Virtual Tag）是与缓存相关的两种不同的缓存组织方式，主要涉及缓存中的索引和标记的处理方式。这两者的区别在于虚拟地址空间和物理地址空间在缓存中是如何映射的。 VIPT（Virtual Index, Physical Tag）: 在VIPT缓存中，虚拟地址的高位用于索引缓存，而低位用于">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-25T12:05:25.000Z">
-<meta property="article:modified_time" content="2023-11-25T12:08:18.510Z">
+<meta property="article:published_time" content="2023-11-29T07:37:09.000Z">
+<meta property="article:modified_time" content="2023-11-29T08:00:49.222Z">
 <meta property="article:author" content="Tony Tang">
 <meta name="twitter:card" content="summary">
 
@@ -83,7 +83,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(38)</small>
+                <small>(42)</small>
             
         </div>
     </li>
@@ -95,7 +95,7 @@
         <div data-rel="linux命令">
             
             linux命令
-            <small>(28)</small>
+            <small>(29)</small>
         </div>
         
     </li>
@@ -110,7 +110,7 @@
         <div data-rel="windows工具">
             
             windows工具
-            <small>(2)</small>
+            <small>(3)</small>
         </div>
         
     </li>
@@ -161,7 +161,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="38">
+<input type="hidden" id="yelog_site_posts_number" value="42">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -241,6 +241,42 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2023/11/29/vipt-cache%E5%92%8Cvivt-cache%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="vipt-cache和vivt-cache的区别">vipt-cache和vivt-cache的区别</span>
+            <span class="post-date" title="2023-11-29 15:37:09">2023/11/29</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2023/11/28/tvm%E7%BC%96%E8%AF%91%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tvm编译入门">tvm编译入门</span>
+            <span class="post-date" title="2023-11-28 15:08:43">2023/11/28</span>
+        </a>
+        
+        
+        <a  class="All windows工具 "
+           href="/2023/11/27/%E5%AD%97%E5%B9%95%E6%8F%90%E5%8F%96%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="字幕提取工具">字幕提取工具</span>
+            <span class="post-date" title="2023-11-27 14:25:06">2023/11/27</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/27/ohmyzsh%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ohmyzsh管理命令">ohmyzsh管理命令</span>
+            <span class="post-date" title="2023-11-27 09:58:35">2023/11/27</span>
+        </a>
         
         
         <a  class="All linux命令 "
@@ -622,7 +658,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-11-25 17:00:13'>2023-11-25 16:40</time>
+            Created At : <time class="date" title='Updated At: 2023-11-27 13:06:13'>2023-11-25 16:40</time>
         
     </div>
     <div class="article-meta">
@@ -644,7 +680,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%89%80%E6%9C%89%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-text">下载完所有子模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">查看所有分支的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF"><span class="toc-text">删除某个分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-text">切换远程分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E7%89%B9%E5%AE%9A%E5%88%86%E6%94%AF"><span class="toc-text">克隆特定分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%90%8D%E8%AF%8D"><span class="toc-text">修改名词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%A2%AB%E5%88%A0%E9%99%A4%E6%8E%89%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">下载被删除掉的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E7%8E%AFpush"><span class="toc-text">使用令牌环push</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-text">git如何新建分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%9F%A5%E7%9C%8B%E4%BB%A3%E7%90%86"><span class="toc-text">git查看代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">设置代理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%81%A2%E5%A4%8D%E6%88%90%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="toc-text">git恢复成某个版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E5%90%8E%E5%BC%BA%E8%A1%8C%E6%8E%A8%E4%B8%8A%E5%8E%BB%E5%91%BD%E4%BB%A4"><span class="toc-text">版本恢复后强行推上去命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">取消代理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99sh%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90"><span class="toc-text">给sh文件添加可执行权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%9F%A5%E7%9C%8B%E9%93%BE%E6%8E%A5"><span class="toc-text">git查看链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-text">删除子模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BF%A1%E6%81%AF-%E8%BF%BD%E5%8A%A0%E6%8F%90%E4%BA%A4%E5%86%85%E5%AE%B9"><span class="toc-text">修改提交的信息 追加提交内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%BF%A1%E6%81%AF"><span class="toc-text">git环境变量信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80commit"><span class="toc-text">撤销commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%88%B0%E6%9F%90%E4%B8%AA%E6%8F%90%E4%BA%A4"><span class="toc-text">恢复某个文件到某个提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF-1"><span class="toc-text">删除某个分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%86%E8%A1%8C%E7%AC%A6"><span class="toc-text">配置分行符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%97%E5%87%BA%E7%BB%99%E5%AE%9A%E5%AD%98%E5%82%A8%E5%BA%93%E4%B8%AD%E7%9A%84%E5%BD%93%E5%89%8Dgit%E5%BC%95%E7%94%A8"><span class="toc-text">如何列出给定存储库中的当前git引用?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E7%9C%8B%E6%97%A5%E5%BF%97%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">git 看日志的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E6%9F%A5%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-text">git 查查看日志提交记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80add"><span class="toc-text">撤销add</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E7%9A%84%E6%8F%90%E4%BA%A4%E5%B7%AE%E5%BC%82"><span class="toc-text">查看日志的提交差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E5%88%B0%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-text">切换某个文件恢复到某个版本的具体操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E4%B8%8B%E8%BD%BD%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E6%96%87%E4%BB%B6%E5%A4%B9%E9%9C%80%E8%A6%81%E6%8C%89%E7%85%A7%E4%B8%8B%E9%9D%A2%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6"><span class="toc-text">只下载某个文件或者文件夹需要按照下面谷歌插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDhuggingface%E4%B8%8A%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">下载huggingface上的命令</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%89%80%E6%9C%89%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-text">下载完所有子模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">查看所有分支的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF"><span class="toc-text">删除某个分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-text">切换远程分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E7%89%B9%E5%AE%9A%E5%88%86%E6%94%AF"><span class="toc-text">克隆特定分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%90%8D%E5%AD%97"><span class="toc-text">修改名字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%A2%AB%E5%88%A0%E9%99%A4%E6%8E%89%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">下载被删除掉的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E7%8E%AFpush"><span class="toc-text">使用令牌环push</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-text">git如何新建分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%9F%A5%E7%9C%8B%E4%BB%A3%E7%90%86"><span class="toc-text">git查看代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">设置代理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%81%A2%E5%A4%8D%E6%88%90%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="toc-text">git恢复成某个版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E5%90%8E%E5%BC%BA%E8%A1%8C%E6%8E%A8%E4%B8%8A%E5%8E%BB%E5%91%BD%E4%BB%A4"><span class="toc-text">版本恢复后强行推上去命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">取消代理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99sh%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90"><span class="toc-text">给sh文件添加可执行权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%9F%A5%E7%9C%8B%E9%93%BE%E6%8E%A5"><span class="toc-text">git查看链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-text">删除子模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BF%A1%E6%81%AF-%E8%BF%BD%E5%8A%A0%E6%8F%90%E4%BA%A4%E5%86%85%E5%AE%B9"><span class="toc-text">修改提交的信息 追加提交内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%BF%A1%E6%81%AF"><span class="toc-text">git环境变量信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80commit"><span class="toc-text">撤销commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%88%B0%E6%9F%90%E4%B8%AA%E6%8F%90%E4%BA%A4"><span class="toc-text">恢复某个文件到某个提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF-1"><span class="toc-text">删除某个分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%86%E8%A1%8C%E7%AC%A6"><span class="toc-text">配置分行符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%97%E5%87%BA%E7%BB%99%E5%AE%9A%E5%AD%98%E5%82%A8%E5%BA%93%E4%B8%AD%E7%9A%84%E5%BD%93%E5%89%8Dgit%E5%BC%95%E7%94%A8"><span class="toc-text">如何列出给定存储库中的当前git引用?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E7%9C%8B%E6%97%A5%E5%BF%97%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">git 看日志的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E6%9F%A5%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-text">git 查查看日志提交记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80add"><span class="toc-text">撤销add</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E7%9A%84%E6%8F%90%E4%BA%A4%E5%B7%AE%E5%BC%82"><span class="toc-text">查看日志的提交差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E5%88%B0%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-text">切换某个文件恢复到某个版本的具体操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E4%B8%8B%E8%BD%BD%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E6%96%87%E4%BB%B6%E5%A4%B9%E9%9C%80%E8%A6%81%E6%8C%89%E7%85%A7%E4%B8%8B%E9%9D%A2%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6"><span class="toc-text">只下载某个文件或者文件夹需要按照下面谷歌插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDhuggingface%E4%B8%8A%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">下载huggingface上的命令</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -666,7 +702,7 @@
 <h2 id="切换远程分支"><a href="#切换远程分支" class="headerlink" title="切换远程分支"></a>切换远程分支</h2><p>git checkout -b 本地分支名 origin&#x2F;远程分支名</p>
 <h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><p>git rm -f [文件名]</p>
 <h2 id="克隆特定分支"><a href="#克隆特定分支" class="headerlink" title="克隆特定分支"></a>克隆特定分支</h2><p>git clone [链接] -b [分支]</p>
-<h2 id="修改名词"><a href="#修改名词" class="headerlink" title="修改名词"></a>修改名词</h2><p>git mv –force AppTest.java apptest.java<br>git add apptest.java<br>git commit –m “rename”<br>git push origin XXX(分支)</p>
+<h2 id="修改名字"><a href="#修改名字" class="headerlink" title="修改名字"></a>修改名字</h2><p>git mv –force AppTest.java apptest.java<br>git add apptest.java<br>git commit –m “rename”<br>git push origin XXX(分支)</p>
 <h2 id="下载被删除掉的文件"><a href="#下载被删除掉的文件" class="headerlink" title="下载被删除掉的文件"></a>下载被删除掉的文件</h2><p>git checkout [文件路径]</p>
 <h2 id="使用令牌环push"><a href="#使用令牌环push" class="headerlink" title="使用令牌环push"></a>使用令牌环push</h2><p>git push https:&#x2F;&#x2F;[Personal Access Token]@github.com&#x2F;[User Name]&#x2F;[Repository Name].git</p>
 <h2 id="git如何新建分支"><a href="#git如何新建分支" class="headerlink" title="git如何新建分支"></a>git如何新建分支</h2><ol>

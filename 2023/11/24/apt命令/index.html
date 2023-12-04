@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="apt命令 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
+<meta name="description" content="VIPT（Virtual Index, Physical Tag）和VIVT（Virtual Index, Virtual Tag）是与缓存相关的两种不同的缓存组织方式，主要涉及缓存中的索引和标记的处理方式。这两者的区别在于虚拟地址空间和物理地址空间在缓存中是如何映射的。 VIPT（Virtual Index, Physical Tag）: 在VIPT缓存中，虚拟地址的高位用于索引缓存，而低位用于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跑异构的rootfs">
-<meta property="og:url" content="http://example.com/2023/11/25/%E8%B7%91%E5%BC%82%E6%9E%84%E7%9A%84rootfs/index.html">
+<meta property="og:title" content="vipt-cache和vivt-cache的区别">
+<meta property="og:url" content="http://example.com/2023/11/29/vipt-cache%E5%92%8Cvivt-cache%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装跑异构的二进制翻译库apt install qemu-user-static 有三种方法跑异构的rootfs chrootsudo chroot [chroot的rootfs] 高性能的chrootsudo systemd-nspawn -D [chroot的rootfs] 启动一个完整的系统：sudo systemd-nspawn -bD [chroot的rootfs]">
+<meta property="og:description" content="VIPT（Virtual Index, Physical Tag）和VIVT（Virtual Index, Virtual Tag）是与缓存相关的两种不同的缓存组织方式，主要涉及缓存中的索引和标记的处理方式。这两者的区别在于虚拟地址空间和物理地址空间在缓存中是如何映射的。 VIPT（Virtual Index, Physical Tag）: 在VIPT缓存中，虚拟地址的高位用于索引缓存，而低位用于">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-25T12:05:25.000Z">
-<meta property="article:modified_time" content="2023-11-25T12:08:18.510Z">
+<meta property="article:published_time" content="2023-11-29T07:37:09.000Z">
+<meta property="article:modified_time" content="2023-11-29T08:00:49.222Z">
 <meta property="article:author" content="Tony Tang">
 <meta name="twitter:card" content="summary">
 
@@ -83,7 +83,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(38)</small>
+                <small>(42)</small>
             
         </div>
     </li>
@@ -95,7 +95,7 @@
         <div data-rel="linux命令">
             
             linux命令
-            <small>(28)</small>
+            <small>(29)</small>
         </div>
         
     </li>
@@ -110,7 +110,7 @@
         <div data-rel="windows工具">
             
             windows工具
-            <small>(2)</small>
+            <small>(3)</small>
         </div>
         
     </li>
@@ -161,7 +161,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="38">
+<input type="hidden" id="yelog_site_posts_number" value="42">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -241,6 +241,42 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2023/11/29/vipt-cache%E5%92%8Cvivt-cache%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="vipt-cache和vivt-cache的区别">vipt-cache和vivt-cache的区别</span>
+            <span class="post-date" title="2023-11-29 15:37:09">2023/11/29</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2023/11/28/tvm%E7%BC%96%E8%AF%91%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tvm编译入门">tvm编译入门</span>
+            <span class="post-date" title="2023-11-28 15:08:43">2023/11/28</span>
+        </a>
+        
+        
+        <a  class="All windows工具 "
+           href="/2023/11/27/%E5%AD%97%E5%B9%95%E6%8F%90%E5%8F%96%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="字幕提取工具">字幕提取工具</span>
+            <span class="post-date" title="2023-11-27 14:25:06">2023/11/27</span>
+        </a>
+        
+        
+        <a  class="All linux命令 "
+           href="/2023/11/27/ohmyzsh%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ohmyzsh管理命令">ohmyzsh管理命令</span>
+            <span class="post-date" title="2023-11-27 09:58:35">2023/11/27</span>
+        </a>
         
         
         <a  class="All linux命令 "
@@ -622,7 +658,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-11-24 22:13:23'>2023-11-24 22:11</time>
+            Created At : <time class="date" title='Updated At: 2023-11-27 13:15:01'>2023-11-24 22:11</time>
         
     </div>
     <div class="article-meta">
@@ -644,7 +680,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-text">安装命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E5%91%BD%E4%BB%A4"><span class="toc-text">卸载命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-text">编辑源文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%AD%A3%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="toc-text">修正依赖包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E5%8D%87%E7%BA%A7%E7%B3%BB%E7%BB%9F"><span class="toc-text">完整升级系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%9F%90%E4%B8%AA%E5%BA%93"><span class="toc-text">查询某个库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%9F%90%E4%B8%AA%E5%8C%85%E7%9A%84%E6%BA%90%E7%A0%81"><span class="toc-text">下载某个包的源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E4%B8%8B%E8%BD%BD%E6%9F%90%E4%B8%AA%E5%8C%85%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%8F%AA%E4%B8%8B%E8%BD%BD%E4%B8%8D%E5%AE%89%E8%A3%85"><span class="toc-text">只下载某个包的命令，只下载不安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%98%AF%E5%90%A6%E6%9C%89%E5%AF%B9%E5%BA%94%E7%9A%84%E6%BA%90%E7%A0%81%E5%8C%85"><span class="toc-text">查询是否有对应的源码包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%80%E4%B8%AA%E5%8C%85%E7%9A%84%E6%89%80%E6%9C%89%E7%9A%84%E5%8C%85"><span class="toc-text">下载一个包的所有的包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99apt%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-text">给apt设置代理</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-text">安装命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E5%91%BD%E4%BB%A4"><span class="toc-text">卸载命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-text">编辑源文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%AD%A3%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="toc-text">修正依赖包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E5%8D%87%E7%BA%A7%E7%B3%BB%E7%BB%9F"><span class="toc-text">完整升级系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%9F%90%E4%B8%AA%E5%BA%93"><span class="toc-text">查询某个库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%9F%90%E4%B8%AA%E5%8C%85%E7%9A%84%E6%BA%90%E7%A0%81"><span class="toc-text">下载某个包的源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E4%B8%8B%E8%BD%BD%E6%9F%90%E4%B8%AA%E5%8C%85%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%8F%AA%E4%B8%8B%E8%BD%BD%E4%B8%8D%E5%AE%89%E8%A3%85"><span class="toc-text">只下载某个包的命令，只下载不安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%98%AF%E5%90%A6%E6%9C%89%E5%AF%B9%E5%BA%94%E7%9A%84%E6%BA%90%E7%A0%81%E5%8C%85"><span class="toc-text">查询是否有对应的源码包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%80%E4%B8%AA%E5%8C%85%E7%9A%84%E6%89%80%E6%9C%89%E7%9A%84%E5%8C%85"><span class="toc-text">下载一个包的所有的包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99apt%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-text">给apt设置代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apt%E6%9F%A5%E6%89%BE%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B1%9E%E4%BA%8E%E5%93%AA%E4%B8%AA%E5%8C%85"><span class="toc-text">apt查找某个文件属于哪个包</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -662,7 +698,7 @@
       
         <h2 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h2><p>sudo apt install [包名]</p>
 <h2 id="卸载命令"><a href="#卸载命令" class="headerlink" title="卸载命令"></a>卸载命令</h2><p>sudo apt remove [包名]</p>
-<h2 id="编辑源文件"><a href="#编辑源文件" class="headerlink" title="编辑源文件"></a>编辑源文件</h2><p>sudo apt edit-source</p>
+<h2 id="编辑源文件"><a href="#编辑源文件" class="headerlink" title="编辑源文件"></a>编辑源文件</h2><p>sudo vim &#x2F;etc&#x2F;apt&#x2F;sources.list</p>
 <h2 id="修正依赖包"><a href="#修正依赖包" class="headerlink" title="修正依赖包"></a>修正依赖包</h2><p>sudo apt-get install aptitude</p>
 <p>sudo aptitude install [包名]</p>
 <h2 id="完整升级系统"><a href="#完整升级系统" class="headerlink" title="完整升级系统"></a>完整升级系统</h2><p>sudo apt full-upgrade -y</p>
@@ -672,6 +708,7 @@
 <h2 id="查询是否有对应的源码包"><a href="#查询是否有对应的源码包" class="headerlink" title="查询是否有对应的源码包"></a>查询是否有对应的源码包</h2><p>sudo apt-cache showsrc [包名]</p>
 <h2 id="下载一个包的所有的包"><a href="#下载一个包的所有的包" class="headerlink" title="下载一个包的所有的包"></a>下载一个包的所有的包</h2><p>sudo apt-get install –reinstall -d <code>apt-cache depends [包名] | grep &quot;依赖&quot; | cut -d: -f2 |tr -d &quot;&lt;&gt;&quot;</code></p>
 <h2 id="给apt设置代理"><a href="#给apt设置代理" class="headerlink" title="给apt设置代理"></a>给apt设置代理</h2><p>sudo touch &#x2F;etc&#x2F;apt&#x2F;apt.conf<br>内容<br>Acquire::http::Proxy “<a href="http://your_proxy_address:proxy_port">http://your_proxy_address:proxy_port</a>“;<br>Acquire::https::Proxy “<a href="http://your_proxy_address:proxy_port">http://your_proxy_address:proxy_port</a>“;</p>
+<h2 id="apt查找某个文件属于哪个包"><a href="#apt查找某个文件属于哪个包" class="headerlink" title="apt查找某个文件属于哪个包"></a>apt查找某个文件属于哪个包</h2><p>sudo apt install apt-file<br>sudo apt-file update<br>sudo apt search [文件名]</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至wso4133560@gmail.com </span>
